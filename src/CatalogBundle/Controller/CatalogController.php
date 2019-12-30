@@ -11,13 +11,14 @@
 
 namespace App\CatalogBundle\Controller;
 
+use App\CatalogBundle\Entity\Product;
+use App\CatalogBundle\Form\ProductType;
 use App\Entity\Comment;
 use App\Entity\Post;
 use App\Events\CommentCreatedEvent;
 use App\Form\CommentType;
 use App\Repository\PostRepository;
-use App\Repository\TagRepository;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -29,36 +30,45 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Controller used to manage blog contents in the public part of the site.
  *
- * @Route("/catalog")
- *
  * @author Ryan Weaver <weaverryan@gmail.com>
  * @author Javier Eguiluz <javier.eguiluz@gmail.com>
  */
 class CatalogController extends AbstractController
 {
-    /**
-     * @Route("/", defaults={"page": "1", "_format"="html"}, methods={"GET"}, name="blog_index")
-     * @Route("/rss.xml", defaults={"page": "1", "_format"="xml"}, methods={"GET"}, name="blog_rss")
-     * @Route("/page/{page<[1-9]\d*>}", defaults={"_format"="html"}, methods={"GET"}, name="blog_index_paginated")
-     * @Cache(smaxage="10")
-     *
-     * NOTE: For standard formats, Symfony will also automatically choose the best
-     * Content-Type header for the response.
-     * See https://symfony.com/doc/current/quick_tour/the_controller.html#using-formats
-     */
-    public function index(Request $request, int $page, string $_format, PostRepository $posts, TagRepository $tags): Response
-    {
-        $tag = null;
-        if ($request->query->has('tag')) {
-            $tag = $tags->findOneBy(['name' => $request->query->get('tag')]);
-        }
-        $latestPosts = $posts->findLatest($page, $tag);
 
-        // Every template name also has two extensions that specify the format and
-        // engine for that template.
-        // See https://symfony.com/doc/current/templating.html#template-suffix
-        return $this->render('blog/index.'.$_format.'.twig', [
-            'paginator' => $latestPosts,
+    /**
+     * New product in catalog
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function new(Request $request): Response
+    {
+        $product = new Product();
+
+        $form = $this->createForm(ProductType::class, $product)
+            ->add('saveAndCreateNew', SubmitType::class);
+
+        $form->handleRequest($request);
+
+        return $this->render('@Catalog/new.html.twig', [
+            'product' => $product,
+            'form' => $form->createView(),
+        ]);
+
+    }
+
+
+
+    public function index(Request $request): Response
+    {
+
+        $results = ['test', 'ok'];
+
+        // return $this->json($results);
+
+        return $this->render('@Catalog/list.html.twig', [
+            'paginator' => 1,
         ]);
     }
 

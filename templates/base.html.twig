@@ -8,7 +8,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>{% block title %}Symfony Demo application{% endblock %}</title>
+        <title>{% block title %}Symfony Test App{% endblock %}</title>
         <link rel="alternate" type="application/rss+xml" title="{{ 'rss.title'|trans }}" href="{{ path('blog_rss') }}">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -42,8 +42,13 @@
 
                                 {% block header_navigation_links %}
                                     <li>
+                                        <a href="{{ path('catalog_index') }}">
+                                            <i class="fas fa-folder-open"></i> Каталог
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="{{ path('blog_index') }}">
-                                            <i class="fa fa-home" aria-hidden="true"></i> {{ 'menu.homepage'|trans }}
+                                            <i class="fa fa-home" aria-hidden="true"></i> Блог
                                         </a>
                                     </li>
 

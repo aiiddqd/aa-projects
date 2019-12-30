@@ -10,8 +10,8 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $treeBuilder->root('catalog_bundle');
+        $treeBuilder = new TreeBuilder('catalog_bundle');
+        // $treeBuilder->root('catalog_bundle');
         return $treeBuilder;
     }
 }

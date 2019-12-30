@@ -3,6 +3,8 @@ twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
     exception_controller: null
+    paths:
+        'src/CatalogBundle/Resources/views': 'Catalog'
     form_themes:
         - 'form/layout.html.twig'
         - 'form/fields.html.twig'

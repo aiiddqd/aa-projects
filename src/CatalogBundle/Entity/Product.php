@@ -24,7 +24,7 @@ class Product
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $description;
+    private $content;
 
     public function getId(): ?int
     {
@@ -43,14 +43,14 @@ class Product
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getContent(): ?string
     {
-        return $this->description;
+        return $this->content;
     }
 
-    public function setDescription(?string $description): self
+    public function setContent(?string $content): self
     {
-        $this->description = $description;
+        $this->content = $content;
 
         return $this;
     }

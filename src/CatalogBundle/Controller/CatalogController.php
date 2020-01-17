@@ -55,14 +55,10 @@ class CatalogController extends AbstractController
             'product' => $product,
             'form' => $form->createView(),
         ]);
-
     }
-
-
 
     public function index(Request $request): Response
     {
-
         $results = ['test', 'ok'];
 
         // return $this->json($results);

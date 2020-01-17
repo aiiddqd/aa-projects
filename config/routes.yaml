@@ -18,3 +18,4 @@ catalog_index:
 catalog_new:
     path: /catalog/new
     controller: App\CatalogBundle\Controller\CatalogController::new
+    

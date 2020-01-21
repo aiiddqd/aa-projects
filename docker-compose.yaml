@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+    php:
+        container_name: php-fpm
+        build: ./php
+        ports:
+            - "9000:9001"
+        volumes:
+            - ./app:/var/www/app
+        depends_on:
+            - postgres
+    nginx:
+        container_name: nginx
+        build: ./nginx
+        ports:
+            - "80:80"
+        depends_on:
+            - php
+        volumes:
+            - ./logs/nginx:/var/log/nginx:cached
+            - ./app:/var/www/app:cached
+    postgres:
+        image: postgres:9.6-alpine
+        volumes:
+            - ./db/psql:/var/lib/postgresql/data
+        ports:
+            - "5432:5432"

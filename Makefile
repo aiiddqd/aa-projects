@@ -4,6 +4,9 @@ up:
 stop:
 	docker-compose stop
 
+rm:
+	docker-compose down
+
 log:
 	docker-compose logs -f
 

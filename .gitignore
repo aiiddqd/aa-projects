@@ -2,3 +2,4 @@
 /app/.idea/
 /db/*
 !/db/.gitignore
+/logs/

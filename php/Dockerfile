@@ -22,6 +22,7 @@ RUN apk add --update --no-cache \
     php7-pdo \
     php7-pdo_mysql \
     php7-mysqli \
+    php7-sqlite3 \
     php7-xml \
     php7-zlib \
     php7-phar \
@@ -43,12 +44,12 @@ COPY app.ini /etc/php7/conf.d/
 COPY app.ini /etc/php7/cli/conf.d/
 COPY xdebug.ini  /etc/php7/conf.d/
 
-#COPY app.pool.conf /etc/php7/php-fpm.d/
+COPY app.pool.conf /etc/php7/php-fpm.d/
 
 CMD ["php-fpm7", "-F"]
 
 WORKDIR /var/www/app
 
-RUN composer install --prefer-source --no-interaction
+#RUN composer install --prefer-source --no-interaction
 
 EXPOSE 9001

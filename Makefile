@@ -6,8 +6,12 @@ stop:
 
 reload: stop up
 
-rm:
+down:
 	docker-compose down -v
+
+rm:
+	docker-compose kill
+	docker-compose rm -v --force
 
 log:
 	docker-compose logs -f
@@ -21,3 +25,6 @@ build:
 
 status:
 	docker-compose ps
+
+rebuild:
+	docker-compose build --force-rm --pull

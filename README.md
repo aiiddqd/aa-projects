@@ -14,6 +14,8 @@ url: http://sd.local/
 - `make log` - display log from docker
 - `make stop`
 - `make restart`
+- `make status`
+
 - `make build` - rebuild images
 
 

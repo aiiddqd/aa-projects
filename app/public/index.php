@@ -1,5 +1,9 @@
 <?php
 
+//phpinfo();
+//error_log(1);
+//exit;
+
 use App\Kernel;
 use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\HttpFoundation\Request;

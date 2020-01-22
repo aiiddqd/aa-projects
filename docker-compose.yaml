@@ -8,8 +8,7 @@ services:
             - "9000:9001"
         volumes:
             - ./app:/var/www/app
-        depends_on:
-            - postgres
+            - ./logs/php:/var/log/php7:cached
     nginx:
         container_name: nginx
         build: ./nginx
@@ -18,16 +17,16 @@ services:
         depends_on:
             - php
         volumes:
-            - ./logs/nginx:/var/log/nginx:cached
             - ./app:/var/www/app:cached
-    postgres:
-        container_name: psql
-        image: postgres:9.6-alpine
-        volumes:
-            - ./db/psql:/var/lib/postgresql/data
-        ports:
-            - "5432:5432"
-        environment:
-            - DB_NAME=local
-            - DB_USER=local
-            - DB_PASS=pass
+            - ./logs/nginx:/var/log/nginx:cached
+#    postgres:
+#        container_name: psql
+#        image: postgres:9.6-alpine
+#        volumes:
+#            - ./db/psql:/var/lib/postgresql/data
+#        ports:
+#            - "5432:5432"
+#        environment:
+#            - DB_NAME=local
+#            - DB_USER=local
+#            - DB_PASS=pass

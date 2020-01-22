@@ -1,8 +1,7 @@
 <?php
 
-//phpinfo();
-//error_log(1);
-//exit;
+phpinfo();
+exit;
 
 use App\Kernel;
 use Symfony\Component\ErrorHandler\Debug;

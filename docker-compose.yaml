@@ -8,7 +8,7 @@ services:
             - "9000:9001"
         volumes:
             - ./app:/var/www/app
-            - ./logs/php:/var/log/php7:cached
+            - ./logs/php:/var/log/php7
     nginx:
         container_name: nginx
         build: ./nginx
@@ -19,6 +19,13 @@ services:
         volumes:
             - ./app:/var/www/app:cached
             - ./logs/nginx:/var/log/nginx:cached
+#    composer:
+#        container_name: composer
+#        restart: 'no'
+#        image: composer/composer:php7
+#        command: install
+#        volumes:
+#            - ./app:/app
 #    postgres:
 #        container_name: psql
 #        image: postgres:9.6-alpine

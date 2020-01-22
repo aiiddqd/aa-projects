@@ -48,4 +48,7 @@ COPY xdebug.ini  /etc/php7/conf.d/
 CMD ["php-fpm7", "-F"]
 
 WORKDIR /var/www/app
+
+RUN composer install --prefer-source --no-interaction
+
 EXPOSE 9001

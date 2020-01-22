@@ -4,8 +4,10 @@ up:
 stop:
 	docker-compose stop
 
+reload: stop up
+
 rm:
-	docker-compose down
+	docker-compose down -v
 
 log:
 	docker-compose logs -f

@@ -3,3 +3,4 @@
 /db/*
 !/db/.gitignore
 /logs/
+node_modules

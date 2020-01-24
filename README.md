@@ -25,6 +25,7 @@ based on manual http://geekyplatypus.com/dockerise-your-php-application-with-ngi
 
 https://github.com/eko/docker-symfony/blob/master/docker-compose.yml
 
+
 # Snippets
 
 php composer setup

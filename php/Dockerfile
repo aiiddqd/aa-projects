@@ -22,6 +22,7 @@ RUN apk add --update --no-cache \
     php7-pdo \
     php7-pdo_mysql \
     php7-mysqli \
+    php7-pdo_sqlite \
     php7-sqlite3 \
     sqlite-dev \
     php7-xml \

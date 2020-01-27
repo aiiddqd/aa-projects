@@ -27,4 +27,9 @@ status:
 	docker-compose ps
 
 rebuild:
+	docker-compose kill
+	docker-compose rm -v --force
 	docker-compose build --force-rm --pull
+
+sh:
+	docker exec -ti php-fpm /bin/sh

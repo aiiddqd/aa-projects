@@ -6037,12 +6037,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "a3976170945a1b2ee1d7e64509c0e373e7995bc3"
+                "reference": "26fc26627e7eac6a371717d70ffdd42e5109d7a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/a3976170945a1b2ee1d7e64509c0e373e7995bc3",
-                "reference": "a3976170945a1b2ee1d7e64509c0e373e7995bc3",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/26fc26627e7eac6a371717d70ffdd42e5109d7a7",
+                "reference": "26fc26627e7eac6a371717d70ffdd42e5109d7a7",
                 "shasum": ""
             },
             "require": {
@@ -6119,7 +6119,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2020-01-18T11:53:19+00:00"
+            "time": "2020-01-23T12:20:28+00:00"
         },
         {
             "name": "nikic/php-parser",

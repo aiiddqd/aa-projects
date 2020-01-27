@@ -28,7 +28,12 @@ https://github.com/eko/docker-symfony/blob/master/docker-compose.yml
 
 # Snippets
 
-php composer setup
+## php composer setup
 ```
 docker-compose run php composer install
+```
+
+## php app shell
+```
+docker exec -ti php-fpm /bin/sh
 ```

@@ -30,7 +30,7 @@ https://github.com/eko/docker-symfony/blob/master/docker-compose.yml
 
 ## php composer setup
 ```
-docker-compose run php composer install
+docker-compose run php-fpm composer install
 ```
 
 ## php app shell

@@ -42,7 +42,7 @@ class CatalogController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function new(Request $request): Response
+    public function newItem(Request $request): Response
     {
         $product = new Product();
 

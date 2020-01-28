@@ -1,0 +1,7 @@
+#catalog_index:
+#  path: /catalog
+#  controller: App\CatalogBundle\Controller\CatalogController::index
+#
+#catalog_new:
+#  path: /catalog/new
+#  controller: App\CatalogBundle\Controller\CatalogController::newItem

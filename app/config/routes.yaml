@@ -11,11 +11,16 @@ homepage:
         template: default/homepage.html.twig
         _locale: '%locale%'
 
+# XXX: перетащить в бандл
+
 catalog_index:
-    path: /catalog
-    controller: App\CatalogBundle\Controller\CatalogController::index
+  path: /catalog
+  controller: App\CatalogBundle\Controller\CatalogController::index
 
 catalog_new:
-    path: /catalog/new
-    controller: App\CatalogBundle\Controller\CatalogController::new
-    
+  path: /catalog/new
+  controller: App\CatalogBundle\Controller\CatalogController::newItem
+
+#catalog:
+#    resource: '@CatalogBundle/Resources/config/routes.yml'
+#    prefix:   /cat/urls

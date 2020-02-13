@@ -13,6 +13,7 @@ namespace App\CatalogBundle\Controller;
 
 use App\CatalogBundle\Entity\Product;
 use App\CatalogBundle\Form\ProductType;
+use App\CatalogBundle\Repository\ProductRepository;
 use App\Entity\Comment;
 use App\Entity\Post;
 use App\Events\CommentCreatedEvent;
@@ -90,14 +91,15 @@ class CatalogController extends AbstractController
         ]);
     }
 
-    public function index(Request $request): Response
+    public function index(Request $request, int $page = 1,  ProductRepository $products): Response
     {
         $results = ['test', 'ok'];
 
+        $latestItems = $products->findLatest($page);
         // return $this->json($results);
 
         return $this->render('@Catalog/list.html.twig', [
-            'paginator' => 1,
+            'paginator' => $latestItems,
         ]);
     }
 

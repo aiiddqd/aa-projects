@@ -4,5 +4,20 @@
 
 {% block main %}
    <h1>Каталог</h1>
-   <p>Тут будет список продуктов</p>
+   <p>Список продуктов</p>
+
+
+   {% for product in paginator.results %}
+      <article class="product">
+         <h2>
+            {{ product.title }}
+         </h2>
+
+         <p>{{ product.content }}</p>
+
+      </article>
+   {% endfor %}
+
+   {{ dump(paginator) }}
+
 {% endblock %}

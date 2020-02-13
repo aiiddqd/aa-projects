@@ -37,3 +37,20 @@ docker-compose run php-fpm composer install
 ```
 docker exec -ti php-fpm /bin/sh
 ```
+
+## migrations
+
+### make and apply 
+```
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+```
+
+### regenerate getters and setters
+```
+php bin/console make:entity --regenerate
+```
+
+### doc 
+
+https://symfony.com/doc/current/doctrine.html

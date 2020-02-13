@@ -18,7 +18,13 @@ use App\Entity\Post;
 use App\Events\CommentCreatedEvent;
 use App\Form\CommentType;
 use App\Repository\PostRepository;
+
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+
+
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -42,15 +48,42 @@ class CatalogController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function newItem(Request $request): Response
+    public function newItem(Request $request)
     {
         $product = new Product();
+//        $product->setTitle('234324');
+//        $product->setContent('sfsdf');
 
-        $form = $this->createForm(ProductType::class, $product)
-            ->add('saveAndCreateNew', SubmitType::class);
+        $form = $this->createFormBuilder($product)
+            ->add('title', TextType::class)
+            ->add('content', TextareaType::class)
+            ->add('save', SubmitType::class, array('label' => 'Добавить'))
+            ->getForm();
 
         $form->handleRequest($request);
 
+        dump($form->isSubmitted());
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // $form->getData() holds the submitted values
+            // но первоначальная переменная `$task` тоже была обновлена
+            $product = $form->getData();
+
+            dump($product);
+
+            // @TODO: make good
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($product);
+            $entityManager->flush();
+
+//            return $this->redirectToRoute('task_success');
+        }
+
+//        $form = $this->createForm(ProductType::class, $product)
+//            ->add('saveAndCreateNew', SubmitType::class);
+//
+//        $form->handleRequest($request);
+//
         return $this->render('@Catalog/new.html.twig', [
             'product' => $product,
             'form' => $form->createView(),

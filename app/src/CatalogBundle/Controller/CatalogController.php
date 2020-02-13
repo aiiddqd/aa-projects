@@ -91,6 +91,31 @@ class CatalogController extends AbstractController
         ]);
     }
 
+
+    /**
+     * XXX make edit product
+     *
+     * @param Request $request
+     * @param ProductRepository $product
+     * @return Response
+     */
+    public function editItem(Request $request, ProductRepository $product){
+
+        $form = $this->createFormBuilder($product)
+            ->add('title', TextType::class)
+            ->add('content', TextareaType::class)
+            ->add('save', SubmitType::class, array('label' => 'Добавить'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+
+        return $this->render('@Catalog/new.html.twig', [
+            'product' => $product,
+            'form' => $form->createView(),
+        ]);
+    }
+
     public function index(Request $request, int $page = 1,  ProductRepository $products): Response
     {
         $results = ['test', 'ok'];

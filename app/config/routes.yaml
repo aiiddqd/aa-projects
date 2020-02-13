@@ -21,6 +21,10 @@ catalog_new:
   path: /catalog/new
   controller: App\CatalogBundle\Controller\CatalogController::newItem
 
+catalog_edit:
+  path: /catalog/{id<\d+>}/edit
+  controller: App\CatalogBundle\Controller\CatalogController::editItem
+
 #catalog:
 #    resource: '@CatalogBundle/Resources/config/routes.yml'
 #    prefix:   /cat/urls

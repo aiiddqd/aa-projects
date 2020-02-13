@@ -15,6 +15,9 @@
 
          <p>{{ product.content }}</p>
 
+         <a href="{{ path('catalog_edit', {id: product.id}) }}">edit</a>
+
+         <hr>
       </article>
    {% endfor %}
 

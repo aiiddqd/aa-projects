@@ -3,6 +3,7 @@
     "private": true,
     "type": "module",
     "scripts": {
+        "local": "php artisan native:serve",
         "build": "vite build",
         "dev": "vite"
     },

@@ -5,7 +5,7 @@ namespace App\Providers;
 use Native\Laravel\Facades\Window;
 use Native\Laravel\Contracts\ProvidesPhpIni;
 use Native\Laravel\Facades\MenuBar;
-use Native\Laravel\Facades\GlobalShortcut;
+// use Native\Laravel\Facades\GlobalShortcut;
 
 class NativeAppServiceProvider implements ProvidesPhpIni
 {

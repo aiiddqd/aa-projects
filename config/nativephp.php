@@ -13,7 +13,7 @@ return [
      * usually in the form of a reverse domain name.
      * For example: com.nativephp.app
      */
-    'app_id' => env('NATIVEPHP_APP_ID', 'local.alfa.app'),
+    'app_id' => env('NATIVEPHP_APP_ID', 'my.local.aalf'),
 
     /**
      * If your application allows deep linking, you can specify the scheme
@@ -39,12 +39,12 @@ return [
     /**
      * The description of your application.
      */
-    'description' => env('NATIVEPHP_APP_DESCRIPTION', 'An awesome app built with NativePHP'),
+    'description' => env('NATIVEPHP_APP_DESCRIPTION', 'Aalf - Alfa Agent'),
 
     /**
      * The Website of your application.
      */
-    'website' => env('NATIVEPHP_APP_WEBSITE', 'https://nativephp.com'),
+    'website' => env('NATIVEPHP_APP_WEBSITE', 'https://github.com/aiiddqd/aalf'),
 
     /**
      * The default service provider for your application. This provider

@@ -1,11 +1,47 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@plugin "daisyui/theme" {
+	name: "adsart";
+	default: true;
+	prefersdark: true;
+	color-scheme: dark;
+
+	--color-base-100: #0b0c10;
+	--color-base-200: #141822;
+	--color-base-300: #1b2230;
+	--color-base-content: #eef1f7;
+	--color-primary: #ff8a3d;
+	--color-primary-content: #1a0f07;
+	--color-secondary: #3ac7ff;
+	--color-secondary-content: #03141c;
+	--color-accent: #7ef0d6;
+	--color-accent-content: #04130f;
+	--color-neutral: #101623;
+	--color-neutral-content: #eaf0ff;
+	--color-info: #53a8ff;
+	--color-info-content: #051126;
+	--color-success: #2fd47f;
+	--color-success-content: #041d11;
+	--color-warning: #ffc247;
+	--color-warning-content: #2b1b00;
+	--color-error: #ff6678;
+	--color-error-content: #2d0710;
+
+	--radius-selector: 0.5rem;
+	--radius-field: 0.5rem;
+	--radius-box: 1rem;
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+	--border: 1px;
+	--depth: 1;
+	--noise: 0;
+}
 
 :root {
 	color-scheme: dark;
-	--panel-glow: radial-gradient(circle at 15% 20%, rgb(255 107 53 / 0.22), transparent 38%),
-		radial-gradient(circle at 80% 0%, rgb(255 196 0 / 0.15), transparent 35%),
-		linear-gradient(150deg, #111112 0%, #16171a 55%, #0e0f10 100%);
+	--panel-glow: radial-gradient(circle at 18% 20%, rgb(255 138 61 / 0.2), transparent 36%),
+		radial-gradient(circle at 80% 5%, rgb(58 199 255 / 0.14), transparent 34%),
+		linear-gradient(145deg, #090a0f 0%, #0e131c 56%, #090b12 100%);
 }
 
 html {
@@ -13,23 +49,23 @@ html {
 }
 
 body {
-	font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+	font-family: "Segoe UI", sans-serif;
 	background: var(--panel-glow);
 	background-attachment: fixed;
-	color: #f5f5f2;
+	color: hsl(var(--bc));
 }
 
 h1,
 h2,
 h3,
 .navbar-start a {
-	font-family: "Oswald", "Arial Narrow", sans-serif;
+	font-family: "Arial Narrow", "Segoe UI", sans-serif;
 	letter-spacing: 0.02em;
 }
 
 .navbar {
-	background: rgb(11 12 16 / 0.8) !important;
-	border-color: rgb(255 255 255 / 0.12) !important;
+	background: color-mix(in oklab, hsl(var(--b1)) 88%, black) !important;
+	border-color: hsl(var(--bc) / 0.12) !important;
 	box-shadow: 0 10px 30px rgb(0 0 0 / 0.3);
 }
 
@@ -40,25 +76,20 @@ h3,
 	font-size: 0.72rem;
 }
 
-.btn-accent {
-	box-shadow: 0 0 0 1px rgb(255 255 255 / 0.15) inset, 0 10px 20px rgb(26 198 255 / 0.2);
+.btn-primary {
+	box-shadow: 0 10px 24px hsl(var(--p) / 0.25);
 }
 
 .card,
 .rounded-box {
-	background: linear-gradient(165deg, rgb(24 26 31 / 0.95), rgb(15 16 20 / 0.95)) !important;
-	border-color: rgb(255 255 255 / 0.14) !important;
+	background: linear-gradient(165deg, hsl(var(--b2)), hsl(var(--n) / 0.72)) !important;
+	border-color: hsl(var(--bc) / 0.13) !important;
 	box-shadow: 0 14px 35px rgb(0 0 0 / 0.34);
 }
 
-.card p,
-.rounded-box p {
-	color: rgb(229 231 235 / 0.9);
-}
-
 .timeline-box {
-	background: linear-gradient(165deg, rgb(24 26 31 / 0.98), rgb(15 16 20 / 0.98));
-	border: 1px solid rgb(255 255 255 / 0.15);
+	background: linear-gradient(165deg, hsl(var(--b2)), hsl(var(--n) / 0.75));
+	border: 1px solid hsl(var(--bc) / 0.15);
 }
 
 main section {
@@ -72,9 +103,5 @@ main section::after {
 	right: 0;
 	bottom: -1px;
 	height: 1px;
-	background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.08), transparent);
-}
-
-.panel-grid .stat {
-	backdrop-filter: blur(6px);
+	background: linear-gradient(90deg, transparent, hsl(var(--bc) / 0.08), transparent);
 }

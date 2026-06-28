@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "skills": {
+    "astro-js-setup": {
+      "source": "astra-agency/ai-webmaster",
+      "sourceType": "github",
+      "skillPath": "skills/astro-js-setup/SKILL.md",
+      "computedHash": "d284140ac755d0dc2b44694297829b2ddd8b524df593a1637f01f51584bdf880"
+    },
+    "balance-lens": {
+      "source": "astra-agency/ai-webmaster",
+      "sourceType": "github",
+      "skillPath": "skills/balance-lens/SKILL.md",
+      "computedHash": "0cf876b785fcc77b82d44e936d33ad641c3503dcec25c06dbcb901e50be78ead"
+    },
+    "design-md-setup": {
+      "source": "astra-agency/ai-webmaster",
+      "sourceType": "github",
+      "skillPath": "skills/design-md-setup/SKILL.md",
+      "computedHash": "310dfc055123b8cf61b41f8595c4c08d3e53604ccf232656fbb104e12150c217"
+    },
+    "dot-agents-setup": {
+      "source": "astra-agency/ai-webmaster",
+      "sourceType": "github",
+      "skillPath": "skills/dot-agents-setup/SKILL.md",
+      "computedHash": "2a30292f27ebd135851c7b0c12c604f5ed2523f57b14392d24bb223b4c7d0c34"
+    },
+    "infrastructure-md-setup": {
+      "source": "astra-agency/ai-webmaster",
+      "sourceType": "github",
+      "skillPath": "skills/infrastructure-md-setup/SKILL.md",
+      "computedHash": "be454645fbcbb0a0e3913504eaeb25196ad04526e8c75f0be8ce8c0eada8843f"
+    },
+    "marketing-md-setup": {
+      "source": "astra-agency/ai-webmaster",
+      "sourceType": "github",
+      "skillPath": "skills/marketing-md-setup/SKILL.md",
+      "computedHash": "69e4fabe0c08b8553fc1652a8b16cc7a1ef9caafff24ce95e290659fcd990e40"
+    },
+    "rfc": {
+      "source": "astra-agency/ai-webmaster",
+      "sourceType": "github",
+      "skillPath": "skills/rfc/SKILL.md",
+      "computedHash": "493cd65f55f19fa0848f9c75aca8cd4bc858b127aee34308631ceedbd2fda701"
+    },
+    "wiki-llm-setup": {
+      "source": "astra-agency/ai-webmaster",
+      "sourceType": "github",
+      "skillPath": "skills/wiki-llm-setup/SKILL.md",
+      "computedHash": "dd622a8b12f134e5f632f8891e69635d774a4b924bef385dec01eb2a3194fc54"
+    },
+    "wp-setup": {
+      "source": "astra-agency/ai-webmaster",
+      "sourceType": "github",
+      "skillPath": "skills/wp-setup/SKILL.md",
+      "computedHash": "a57be6757d489fbdbb5ba8122d7a2432f3c64801f7d629ccdcaa96ad83d8a80c"
+    }
+  }
+}

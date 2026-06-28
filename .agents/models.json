@@ -1,0 +1,10 @@
+{
+  "default": {
+    "model": "gpt-5.3-codex"
+  },
+  "profiles": {
+    "fast": {
+      "model": "gpt-5.3-codex"
+    }
+  }
+}

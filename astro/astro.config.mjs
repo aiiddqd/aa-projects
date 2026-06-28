@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
+import tailwindcss from '@tailwindcss/vite';
+
 const repository = process.env.GITHUB_REPOSITORY?.split('/')[1];
 const repositoryOwner = process.env.GITHUB_REPOSITORY_OWNER;
 const isGitHubPagesBuild = process.env.GITHUB_PAGES === 'true' && repository && repositoryOwner;
@@ -10,6 +12,10 @@ const site = isGitHubPagesBuild ? `https://${repositoryOwner}.github.io/${reposi
 
 // https://astro.build/config
 export default defineConfig({
-	base,
-	site,
+  base,
+  site,
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

@@ -31,6 +31,12 @@
       "skillPath": "skills/dot-agents-setup/SKILL.md",
       "computedHash": "2a30292f27ebd135851c7b0c12c604f5ed2523f57b14392d24bb223b4c7d0c34"
     },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "computedHash": "4eabc66183767153e404b39d1b839b1c37f2d82d86f0a0d7e880a579d8d62336"
+    },
     "infrastructure-md-setup": {
       "source": "astra-agency/ai-webmaster",
       "sourceType": "github",

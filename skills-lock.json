@@ -13,6 +13,12 @@
       "skillPath": "skills/balance-lens/SKILL.md",
       "computedHash": "0cf876b785fcc77b82d44e936d33ad641c3503dcec25c06dbcb901e50be78ead"
     },
+    "daisyui": {
+      "source": "saadeghi/daisyui",
+      "sourceType": "github",
+      "skillPath": "skills/daisyui/SKILL.md",
+      "computedHash": "85ad75b7c89a34891786d2bc561aa4a1fa009eb519c6481e8ecab3a43bd2174a"
+    },
     "design-md-setup": {
       "source": "astra-agency/ai-webmaster",
       "sourceType": "github",

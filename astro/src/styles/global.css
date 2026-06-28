@@ -31,6 +31,10 @@
 	--safety-orange: #f05a28;
 	--cobalt-mark: #1251a3;
 	--survey-lime: #b7d85b;
+	--icon-sm: 16px;
+	--icon-md: 20px;
+	--icon-lg: 24px;
+	--icon-stroke: 1.9;
 	--panel-glow:
 		radial-gradient(circle at 9% 16%, color-mix(in srgb, var(--safety-orange) 22%, transparent), transparent 32%),
 		radial-gradient(circle at 86% 7%, color-mix(in srgb, var(--cobalt-mark) 18%, transparent), transparent 36%),
@@ -78,11 +82,47 @@ h3,
 	box-shadow: 0 8px 20px color-mix(in srgb, var(--cobalt-mark) 27%, transparent);
 }
 
+.btn-main {
+	transition:
+		transform 210ms ease,
+		box-shadow 210ms ease,
+		background-color 210ms ease;
+}
+
+.btn-main:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 12px 24px color-mix(in srgb, var(--cobalt-mark) 32%, transparent);
+}
+
 .card,
 .rounded-box {
 	background: linear-gradient(162deg, color-mix(in srgb, white 78%, var(--galvanized-light)), color-mix(in srgb, white 50%, var(--zinc-plate))) !important;
 	border-color: color-mix(in srgb, var(--asphalt-ink) 12%, transparent) !important;
 	box-shadow: 0 12px 28px color-mix(in srgb, var(--asphalt-ink) 8%, transparent);
+	transition:
+		transform 210ms ease,
+		box-shadow 210ms ease,
+		border-color 210ms ease;
+}
+
+.card-l1 {
+	border-color: color-mix(in srgb, var(--asphalt-ink) 20%, transparent) !important;
+	box-shadow: 0 15px 34px color-mix(in srgb, var(--asphalt-ink) 12%, transparent);
+}
+
+.card-l2 {
+	box-shadow: 0 10px 24px color-mix(in srgb, var(--asphalt-ink) 9%, transparent);
+}
+
+.card-l3 {
+	background: linear-gradient(165deg, color-mix(in srgb, white 84%, var(--galvanized-light)), color-mix(in srgb, white 68%, var(--zinc-plate))) !important;
+	box-shadow: 0 8px 16px color-mix(in srgb, var(--asphalt-ink) 6%, transparent);
+}
+
+.project-card:hover,
+.service-card:hover,
+.role-tile:hover {
+	transform: translateY(-2px);
 }
 
 .site-main {
@@ -141,6 +181,12 @@ h3,
 	background: linear-gradient(170deg, color-mix(in srgb, white 65%, var(--galvanized-light)), color-mix(in srgb, white 35%, var(--zinc-plate)));
 }
 
+.contacts-panel {
+	background: linear-gradient(158deg, oklch(0.31 0.025 244), oklch(0.27 0.022 244)) !important;
+	color: oklch(0.96 0.01 248) !important;
+	border-color: color-mix(in srgb, white 22%, transparent) !important;
+}
+
 .passport-row {
 	display: flex;
 	justify-content: space-between;
@@ -154,6 +200,8 @@ h3,
 }
 
 .passport-key {
+	display: inline-flex;
+	align-items: center;
 	font-family: "IBM Plex Mono", "Cascadia Code", monospace;
 	font-size: 0.72rem;
 	text-transform: uppercase;
@@ -166,11 +214,30 @@ h3,
 	color: color-mix(in srgb, var(--asphalt-ink) 92%, white);
 }
 
-.emoji-mark {
-	font-size: 1.02em;
-	line-height: 1;
-	vertical-align: -0.08em;
-	margin-right: 0.3rem;
+.tnum {
+	font-variant-numeric: tabular-nums;
+}
+
+.ui-icon {
+	display: inline-flex;
+	vertical-align: middle;
+	color: currentColor;
+	flex: 0 0 auto;
+}
+
+.ui-icon-sm {
+	width: var(--icon-sm);
+	height: var(--icon-sm);
+}
+
+.ui-icon-md {
+	width: var(--icon-md);
+	height: var(--icon-md);
+}
+
+.ui-icon-lg {
+	width: var(--icon-lg);
+	height: var(--icon-lg);
 }
 
 .service-meta {

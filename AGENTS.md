@@ -6,6 +6,10 @@ Repository-level guidance for coding agents working in this project.
 - Apply these rules to the whole repository.
 - Use workspace-local configuration under .agents as the source of truth.
 
+## CHANGELOG.md
+
+после каждой итерации - обновляй CHANGELOG.md с кратким описанием изменений - с учетом даты.
+
 ## Working Rules
 - Prefer small, reviewable changes.
 - Preserve existing style and structure.

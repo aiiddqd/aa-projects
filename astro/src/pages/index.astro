@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 ---
 
 <Layout
@@ -20,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
 			</ul>
 		</div>
 		<div class="navbar-end">
-			<a class="btn btn-sm btn-primary" href="#contacts">Запустить проект</a>
+			<a class="btn btn-sm btn-primary btn-main" href="#contacts">Запустить проект</a>
 		</div>
 	</header>
 
@@ -37,31 +38,12 @@ import Layout from '../layouts/Layout.astro';
 						Маршрут проекта прозрачен: бриф, превиз, нанесение, сдача и сопровождение.
 					</p>
 					<div class="mt-8 flex flex-wrap gap-3">
-						<a class="btn btn-primary" href="#contacts">Обсудить проект</a>
+						<a class="btn btn-primary btn-main" href="#contacts">Обсудить проект</a>
 						<a class="btn btn-outline btn-secondary" href="#projects">Смотреть кейсы</a>
 					</div>
 				</div>
-				<div class="object-passport w-full max-w-md rounded-box p-6 shadow-xl">
-					<p class="mono-label text-sm uppercase text-base-content/65">Карта текущего объекта</p>
-					<div class="mt-4 space-y-1">
-						<div class="passport-row">
-							<p class="passport-key"><span aria-hidden="true" class="emoji-mark">🏗️</span>Тип</p>
-							<p class="passport-value">Резервуарный парк</p>
-						</div>
-						<div class="passport-row">
-							<p class="passport-key"><span aria-hidden="true" class="emoji-mark">🎨</span>Покрытие</p>
-							<p class="passport-value">Суперграфика + фасад</p>
-						</div>
-						<div class="passport-row">
-							<p class="passport-key"><span aria-hidden="true" class="emoji-mark">⏱️</span>Срок</p>
-							<p class="passport-value">28 календарных дней</p>
-						</div>
-						<div class="passport-row">
-							<p class="passport-key"><span aria-hidden="true" class="emoji-mark">📍</span>Режим</p>
-							<p class="passport-value">Без остановки производства</p>
-						</div>
-					</div>
-					<p class="mono-label mt-4 text-xs text-base-content/60">130+ объектов / 94k м² / Россия и СНГ</p>
+				<div class="object-passport card-l1 flex w-full max-w-md items-center justify-center rounded-box p-6 shadow-xl">
+					<span aria-label="Карта" class="select-none text-[8rem] leading-none md:text-[10rem]">🗺️</span>
 				</div>
 			</div>
 		</section>
@@ -71,50 +53,44 @@ import Layout from '../layouts/Layout.astro';
 				<h2 class="text-3xl font-extrabold md:text-4xl">Услуги</h2>
 				<p class="mt-3 max-w-2xl text-base-content/70">Полный цикл: от идеи и превизуализации до покраски и сопровождения на объекте.</p>
 				<div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-					<article class="card card-border bg-base-200/70">
+					<article class="service-card card card-border card-l2 bg-base-200/70">
 						<div class="card-body">
-							<p class="mono-label badge badge-accent badge-soft">Модуль</p>
-							<h3 class="card-title"><span aria-hidden="true" class="emoji-mark">🏗️</span>Промышленное брендирование</h3>
+							<h3 class="card-title"><Icon class="mr-2" name="industrial" />Промышленное брендирование</h3>
 							<p>Краски и эмали для сложных поверхностей и экстремальных условий.</p>
 							<p class="service-meta">Поверхности: металл, бетон, композит<br />Условия: ветер, пыль, перепады температур</p>
 						</div>
 					</article>
-					<article class="card card-border bg-base-200/70">
+					<article class="service-card card card-border card-l2 bg-base-200/70">
 						<div class="card-body">
-							<p class="mono-label badge badge-accent badge-soft">Модуль</p>
-							<h3 class="card-title"><span aria-hidden="true" class="emoji-mark">🎨</span>Крупноформатная графика</h3>
+							<h3 class="card-title"><Icon class="mr-2" name="art" />Крупноформатная графика</h3>
 							<p>Суперграфика на резервуарах, фасадах и технологических зонах.</p>
 							<p class="service-meta">Масштаб: от 200 до 12 000 м²<br />Этап: эскиз, превиз, нанесение</p>
 						</div>
 					</article>
-					<article class="card card-border bg-base-200/70">
+					<article class="service-card card card-border card-l2 bg-base-200/70">
 						<div class="card-body">
-							<p class="mono-label badge badge-accent badge-soft">Модуль</p>
-							<h3 class="card-title"><span aria-hidden="true" class="emoji-mark">📍</span>Арт-навигация и маркировка</h3>
+							<h3 class="card-title"><Icon class="mr-2" name="route" />Арт-навигация и маркировка</h3>
 							<p>Маршруты, зоны безопасности и визуальная навигация без визуального шума.</p>
 							<p class="service-meta">Сценарий: маршруты, риск-зоны, KPI-указатели<br />Формат: модульная система кодов</p>
 						</div>
 					</article>
-					<article class="card card-border bg-base-200/70">
+					<article class="service-card card card-border card-l2 bg-base-200/70">
 						<div class="card-body">
-							<p class="mono-label badge badge-accent badge-soft">Модуль</p>
-							<h3 class="card-title"><span aria-hidden="true" class="emoji-mark">🚚</span>Спецтехника и транспорт</h3>
+							<h3 class="card-title"><Icon class="mr-2" name="truck" />Спецтехника и транспорт</h3>
 							<p>Брендинг транспорта под интенсивную эксплуатацию и регулярные мойки.</p>
 							<p class="service-meta">Поток: ночные смены без простоя<br />Устойчивость: мойки, реагенты, абразив</p>
 						</div>
 					</article>
-					<article class="card card-border bg-base-200/70">
+					<article class="service-card card card-border card-l2 bg-base-200/70">
 						<div class="card-body">
-							<p class="mono-label badge badge-accent badge-soft">Модуль</p>
-							<h3 class="card-title"><span aria-hidden="true" class="emoji-mark">🧪</span>3D-превизуализация</h3>
+							<h3 class="card-title"><Icon class="mr-2" name="lab" />3D-превизуализация</h3>
 							<p>Согласование визуала на цифровой модели объекта до выхода в поле.</p>
 							<p class="service-meta">Проверка: масштаб, читаемость, ракурсы<br />Выход: согласованный рабочий макет</p>
 						</div>
 					</article>
-					<article class="card card-border bg-base-200/70">
+					<article class="service-card card card-border card-l2 bg-base-200/70">
 						<div class="card-body">
-							<p class="mono-label badge badge-accent badge-soft">Модуль</p>
-							<h3 class="card-title"><span aria-hidden="true" class="emoji-mark">⏱️</span>Сопровождение площадок</h3>
+							<h3 class="card-title"><Icon class="mr-2" name="time" />Сопровождение площадок</h3>
 							<p>Обновление графики, поддержка фирменной системы и сезонные кампании.</p>
 							<p class="service-meta">Регламент: инспекция и refresh-слой<br />Результат: единый визуальный стандарт</p>
 						</div>
@@ -127,9 +103,9 @@ import Layout from '../layouts/Layout.astro';
 			<div class="mx-auto max-w-6xl">
 				<h2 class="text-3xl font-extrabold md:text-4xl">Проекты</h2>
 				<div class="mt-8 grid gap-5 lg:grid-cols-3">
-					<article class="card card-border bg-base-200/70">
+					<article class="project-card card card-border card-l1 bg-base-200/70">
 						<div class="project-block card-body">
-							<p class="mono-label badge badge-secondary badge-soft w-fit"><span aria-hidden="true" class="emoji-mark">🏗️</span>Резервуарный парк</p>
+							<p class="mono-label badge badge-secondary badge-soft w-fit"><Icon class="mr-1.5" name="industrial" size="sm" />Резервуарный парк</p>
 							<h4 class="card-title">Контекст</h4>
 							<p>Сделать объект заметным с магистрали и повысить узнаваемость бренда в регионе.</p>
 							<h4 class="card-title">Решение</h4>
@@ -138,9 +114,9 @@ import Layout from '../layouts/Layout.astro';
 							<p>12 500 м² за 28 дней, запуск без остановки производственного цикла.</p>
 						</div>
 					</article>
-					<article class="card card-border bg-base-200/70">
+					<article class="project-card card card-border card-l1 bg-base-200/70">
 						<div class="project-block card-body">
-							<p class="mono-label badge badge-secondary badge-soft w-fit"><span aria-hidden="true" class="emoji-mark">📍</span>Контейнерный терминал</p>
+							<p class="mono-label badge badge-secondary badge-soft w-fit"><Icon class="mr-1.5" name="route" size="sm" />Контейнерный терминал</p>
 							<h4 class="card-title">Контекст</h4>
 							<p>Унифицировать визуальный код 400+ контейнеров и навигацию по площадке.</p>
 							<h4 class="card-title">Решение</h4>
@@ -149,9 +125,9 @@ import Layout from '../layouts/Layout.astro';
 							<p>Сроки погрузки сократились на 14%, снизилось число операционных ошибок.</p>
 						</div>
 					</article>
-					<article class="card card-border bg-base-200/70">
+					<article class="project-card card card-border card-l1 bg-base-200/70">
 						<div class="project-block card-body">
-							<p class="mono-label badge badge-secondary badge-soft w-fit"><span aria-hidden="true" class="emoji-mark">🚚</span>Спецтранспорт</p>
+							<p class="mono-label badge badge-secondary badge-soft w-fit"><Icon class="mr-1.5" name="truck" size="sm" />Спецтранспорт</p>
 							<h4 class="card-title">Контекст</h4>
 							<p>Обновить флот из 60 единиц без вывода техники из графика.</p>
 							<h4 class="card-title">Решение</h4>
@@ -169,27 +145,27 @@ import Layout from '../layouts/Layout.astro';
 				<h2 class="text-3xl font-extrabold md:text-4xl">Процесс</h2>
 				<ol class="process-rail mt-8">
 					<li class="process-step">
-						<p class="process-label"><span aria-hidden="true" class="emoji-mark">🧪</span>Этап 01</p>
+						<p class="process-label"><Icon class="mr-1.5" name="lab" size="sm" />Этап 01</p>
 						<h3 class="card-title">Бриф и аудит объекта</h3>
 						<p>Фиксируем задачи площадки, ограничения по режиму работ и целевые метрики узнаваемости.</p>
 					</li>
 					<li class="process-step">
-						<p class="process-label"><span aria-hidden="true" class="emoji-mark">🎨</span>Этап 02</p>
+						<p class="process-label"><Icon class="mr-1.5" name="art" size="sm" />Этап 02</p>
 						<h3 class="card-title">Концепт и превиз</h3>
 						<p>Показываем визуал на модели объекта и подтверждаем читаемость в реальном масштабе.</p>
 					</li>
 					<li class="process-step">
-						<p class="process-label"><span aria-hidden="true" class="emoji-mark">🏗️</span>Этап 03</p>
+						<p class="process-label"><Icon class="mr-1.5" name="industrial" size="sm" />Этап 03</p>
 						<h3 class="card-title">Подготовка поверхности</h3>
 						<p>Прайминг, тесты материалов и логистика смен так, чтобы не вмешиваться в производственный цикл.</p>
 					</li>
 					<li class="process-step">
-						<p class="process-label"><span aria-hidden="true" class="emoji-mark">⏱️</span>Этап 04</p>
+						<p class="process-label"><Icon class="mr-1.5" name="time" size="sm" />Этап 04</p>
 						<h3 class="card-title">Нанесение и контроль</h3>
 						<p>Работа по техкарте, контроль толщины слоя и промежуточная фотодокументация этапов.</p>
 					</li>
 					<li class="process-step">
-						<p class="process-label"><span aria-hidden="true" class="emoji-mark">📍</span>Этап 05</p>
+						<p class="process-label"><Icon class="mr-1.5" name="route" size="sm" />Этап 05</p>
 						<h3 class="card-title">Сдача и сопровождение</h3>
 						<p>Передаем пакет фиксации результата и план обновления графики на сезонные кампании.</p>
 					</li>
@@ -202,28 +178,28 @@ import Layout from '../layouts/Layout.astro';
 				<h2 class="text-3xl font-extrabold md:text-4xl">Команда</h2>
 				<p class="mt-3 max-w-3xl text-base-content/70">Художники, технологи, промышленные альпинисты и проектные менеджеры, которые умеют работать в жестких производственных условиях.</p>
 				<div class="mt-8 grid gap-4 md:grid-cols-4">
-					<div class="role-tile card card-border bg-base-200/70">
+					<div class="role-tile card card-border card-l3 bg-base-200/70">
 						<div class="card-body p-4">
-							<p class="mono-label text-xs uppercase tracking-[0.2em] text-secondary">Роль</p>
-							<p class="mt-2 text-xl font-bold"><span aria-hidden="true" class="emoji-mark">🎨</span>Арт-директор</p>
+							<Icon name="art" size="lg" />
+							<p class="mt-3 text-xl font-bold leading-tight">Арт-директор</p>
 						</div>
 					</div>
-					<div class="role-tile card card-border bg-base-200/70">
+					<div class="role-tile card card-border card-l3 bg-base-200/70">
 						<div class="card-body p-4">
-							<p class="mono-label text-xs uppercase tracking-[0.2em] text-secondary">Роль</p>
-							<p class="mt-2 text-xl font-bold"><span aria-hidden="true" class="emoji-mark">🧪</span>Технолог ЛКМ</p>
+							<Icon name="lab" size="lg" />
+							<p class="mt-3 text-xl font-bold leading-tight">Технолог ЛКМ</p>
 						</div>
 					</div>
-					<div class="role-tile card card-border bg-base-200/70">
+					<div class="role-tile card card-border card-l3 bg-base-200/70">
 						<div class="card-body p-4">
-							<p class="mono-label text-xs uppercase tracking-[0.2em] text-secondary">Роль</p>
-							<p class="mt-2 text-xl font-bold"><span aria-hidden="true" class="emoji-mark">🏗️</span>Промальп команда</p>
+							<Icon name="industrial" size="lg" />
+							<p class="mt-3 text-xl font-bold leading-tight">Промальп команда</p>
 						</div>
 					</div>
-					<div class="role-tile card card-border bg-base-200/70">
+					<div class="role-tile card card-border card-l3 bg-base-200/70">
 						<div class="card-body p-4">
-							<p class="mono-label text-xs uppercase tracking-[0.2em] text-secondary">Роль</p>
-							<p class="mt-2 text-xl font-bold"><span aria-hidden="true" class="emoji-mark">⏱️</span>Проектный менеджмент</p>
+							<Icon name="time" size="lg" />
+							<p class="mt-3 text-xl font-bold leading-tight">Проектный менеджмент</p>
 						</div>
 					</div>
 				</div>
@@ -231,23 +207,24 @@ import Layout from '../layouts/Layout.astro';
 		</section>
 
 		<section class="section-shell px-4 pb-20 pt-12 md:px-8" id="contacts">
-			<div class="mx-auto max-w-6xl rounded-box border border-base-content/10 bg-neutral p-6 text-neutral-content md:p-10">
-				<h2 class="text-3xl font-extrabold md:text-4xl">Контакты</h2>
-				<p class="mt-3 max-w-3xl text-neutral-content/70">
+			<div class="contacts-panel mx-auto max-w-6xl rounded-box border border-base-content/10 p-6 md:p-10">
+				<h2 class="text-3xl font-extrabold text-neutral-content md:text-4xl">Контакты</h2>
+				<p class="mt-3 max-w-3xl text-neutral-content/90">
 					Без форм на этапе MVP: выбирайте удобный канал, мы подключимся к обсуждению задачи в рабочее окно.
 				</p>
 				<div class="mt-8 grid gap-3 md:grid-cols-3">
 					<a class="btn btn-lg btn-secondary w-full" data-track="cta_telegram" href="https://t.me/demo" rel="noreferrer" target="_blank">
-						Обсудить — Telegram
+						Обсудить - Telegram
 					</a>
-					<a class="btn btn-lg btn-outline btn-secondary w-full" data-track="cta_email" href="mailto:demo@example.com">
-						Написать — почта
+					<a class="btn btn-lg w-full border-2 border-neutral-content/75 bg-transparent text-neutral-content hover:border-neutral-content hover:bg-neutral-content hover:text-neutral" data-track="cta_email" href="mailto:demo@example.com">
+						Написать - почта
 					</a>
-					<a class="btn btn-lg btn-outline btn-secondary w-full" data-track="cta_phone" href="tel:+70000000000">
-						Позвонить — телефон
+					<a class="btn btn-lg w-full border-2 border-neutral-content/75 bg-transparent text-neutral-content hover:border-neutral-content hover:bg-neutral-content hover:text-neutral" data-track="cta_phone" href="tel:+70000000000">
+						Позвонить
 					</a>
 				</div>
-				<p class="mt-4 text-sm text-neutral-content/60">Демо-контакты: позже заменим на боевые.</p>
+				<p class="mt-3 text-sm text-neutral-content/80">Телефон: +7 000 000-00-00</p>
+				<p class="mt-4 text-sm text-neutral-content/75">Демо-контакты: позже заменим на боевые.</p>
 			</div>
 		</section>
 	</main>

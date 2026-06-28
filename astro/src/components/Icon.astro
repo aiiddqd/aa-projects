@@ -1,0 +1,84 @@
+---
+interface Props {
+	name: 'industrial' | 'art' | 'route' | 'truck' | 'lab' | 'time';
+	size?: 'sm' | 'md' | 'lg';
+	class?: string;
+}
+
+const { name, size = 'md', class: className = '' } = Astro.props;
+---
+
+<svg
+	aria-hidden="true"
+	class={`ui-icon ui-icon-${size} ${className}`}
+	fill="none"
+	stroke="currentColor"
+	stroke-linecap="round"
+	stroke-linejoin="round"
+	stroke-width="var(--icon-stroke)"
+	viewBox="0 0 24 24"
+>
+	{
+		name === 'industrial' && (
+			<>
+				<path d="M3 21h18" />
+				<path d="M5 21V10l6-3v14" />
+				<path d="M11 14l8-4v11" />
+				<path d="M8 12v2" />
+				<path d="M8 16v2" />
+				<path d="M14 14v2" />
+				<path d="M17 13v2" />
+			</>
+		)
+	}
+	{
+		name === 'art' && (
+			<>
+				<path d="M12 3a9 9 0 1 0 0 18h1.2a2.8 2.8 0 0 0 0-5.6h-.8A2.4 2.4 0 0 1 10 13V12a2.5 2.5 0 0 1 2.5-2.5H13a4 4 0 0 0 0-8h-1Z" />
+				<circle cx="7.5" cy="10" r="1" />
+				<circle cx="9" cy="6.8" r="1" />
+				<circle cx="12.8" cy="6" r="1" />
+				<circle cx="16" cy="8.2" r="1" />
+			</>
+		)
+	}
+	{
+		name === 'route' && (
+			<>
+				<path d="M12 21c3-3.4 6-6.3 6-10a6 6 0 1 0-12 0c0 3.7 3 6.6 6 10Z" />
+				<circle cx="12" cy="11" r="2" />
+				<path d="M4 6H2" />
+				<path d="M22 18h-2" />
+			</>
+		)
+	}
+	{
+		name === 'truck' && (
+			<>
+				<path d="M2 7h12v9H2z" />
+				<path d="M14 10h4l3 3v3h-7z" />
+				<circle cx="7" cy="18" r="2" />
+				<circle cx="18" cy="18" r="2" />
+			</>
+		)
+	}
+	{
+		name === 'lab' && (
+			<>
+				<path d="M9 3h6" />
+				<path d="M10 3v5l-4.5 7a3 3 0 0 0 2.5 4.5h8a3 3 0 0 0 2.5-4.5L14 8V3" />
+				<path d="M8 14h8" />
+			</>
+		)
+	}
+	{
+		name === 'time' && (
+			<>
+				<circle cx="12" cy="12" r="8" />
+				<path d="M12 8v4l2.8 1.8" />
+				<path d="M12 3v1" />
+				<path d="M12 20v1" />
+			</>
+		)
+	}
+</svg>

@@ -55,6 +55,12 @@
       "skillPath": "skills/rfc/SKILL.md",
       "computedHash": "493cd65f55f19fa0848f9c75aca8cd4bc858b127aee34308631ceedbd2fda701"
     },
+    "ui-ux-pro-max": {
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/ui-ux-pro-max/SKILL.md",
+      "computedHash": "c0e71f1ea9d80c74f710960c2b4d9ab0f8a6d14c331f8d361df2c28d1879846e"
+    },
     "wiki-llm-setup": {
       "source": "astra-agency/ai-webmaster",
       "sourceType": "github",

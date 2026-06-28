@@ -1,12 +1,40 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-	themes: corporate --default;
+	themes: adsart --default;
+}
+
+@plugin "daisyui/theme" {
+	name: "adsart";
+	default: true;
+	prefersdark: false;
+	color-scheme: "light";
+	--color-base-100: oklch(0.95 0.01 232);
+	--color-base-200: oklch(0.91 0.012 233);
+	--color-base-300: oklch(0.86 0.014 234);
+	--color-base-content: oklch(0.27 0.02 243);
+	--color-primary: oklch(0.52 0.17 250);
+	--color-primary-content: oklch(0.98 0.01 255);
+	--color-secondary: oklch(0.66 0.2 40);
+	--color-secondary-content: oklch(0.98 0.01 70);
+	--color-accent: oklch(0.83 0.15 125);
+	--color-accent-content: oklch(0.2 0.02 122);
+	--color-neutral: oklch(0.3 0.025 244);
+	--color-neutral-content: oklch(0.96 0.01 248);
+	--radius-box: 0.75rem;
+	--border: 1px;
 }
 
 :root {
-	--panel-glow: radial-gradient(circle at 8% 14%, hsl(var(--s) / 0.09), transparent 32%),
-		radial-gradient(circle at 86% 6%, hsl(var(--p) / 0.1), transparent 34%),
-		linear-gradient(160deg, hsl(var(--b1)) 0%, hsl(var(--b2)) 42%, hsl(var(--b3)) 100%);
+	--galvanized-light: #d8e1e8;
+	--zinc-plate: #a7b5c2;
+	--asphalt-ink: #1f2a33;
+	--safety-orange: #f05a28;
+	--cobalt-mark: #1251a3;
+	--survey-lime: #b7d85b;
+	--panel-glow:
+		radial-gradient(circle at 9% 16%, color-mix(in srgb, var(--safety-orange) 22%, transparent), transparent 32%),
+		radial-gradient(circle at 86% 7%, color-mix(in srgb, var(--cobalt-mark) 18%, transparent), transparent 36%),
+		linear-gradient(158deg, var(--galvanized-light) 0%, #d1dae2 44%, #c8d2db 100%);
 }
 
 html {
@@ -14,59 +42,240 @@ html {
 }
 
 body {
-	font-family: "Segoe UI", sans-serif;
+	font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
 	background: var(--panel-glow);
 	background-attachment: fixed;
-	color: hsl(var(--bc));
+	color: var(--asphalt-ink);
 }
 
 h1,
 h2,
 h3,
 .navbar-start a {
-	font-family: "Arial Narrow", "Segoe UI", sans-serif;
-	letter-spacing: 0.02em;
+	font-family: "Bebas Neue", "Arial Narrow", sans-serif;
+	letter-spacing: 0.03em;
+}
+
+.mono-label {
+	font-family: "IBM Plex Mono", "Cascadia Code", monospace;
+	letter-spacing: 0.05em;
 }
 
 .navbar {
-	background: hsl(var(--b1) / 0.88) !important;
-	border-color: hsl(var(--bc) / 0.12) !important;
-	box-shadow: 0 8px 24px hsl(var(--n) / 0.12);
+	background: color-mix(in srgb, var(--galvanized-light) 85%, white) !important;
+	border-color: color-mix(in srgb, var(--asphalt-ink) 14%, transparent) !important;
+	box-shadow: 0 10px 28px color-mix(in srgb, var(--asphalt-ink) 11%, transparent);
 }
 
 .menu a {
 	font-weight: 600;
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
-	font-size: 0.72rem;
+	font-size: 0.69rem;
 }
 
 .btn-primary {
-	box-shadow: 0 8px 18px hsl(var(--p) / 0.24);
+	box-shadow: 0 8px 20px color-mix(in srgb, var(--cobalt-mark) 27%, transparent);
 }
 
 .card,
 .rounded-box {
-	background: linear-gradient(165deg, hsl(var(--b1)), hsl(var(--b2) / 0.96)) !important;
-	border-color: hsl(var(--bc) / 0.13) !important;
-	box-shadow: 0 10px 24px hsl(var(--n) / 0.1);
+	background: linear-gradient(162deg, color-mix(in srgb, white 78%, var(--galvanized-light)), color-mix(in srgb, white 50%, var(--zinc-plate))) !important;
+	border-color: color-mix(in srgb, var(--asphalt-ink) 12%, transparent) !important;
+	box-shadow: 0 12px 28px color-mix(in srgb, var(--asphalt-ink) 8%, transparent);
 }
 
-.timeline-box {
-	background: linear-gradient(165deg, hsl(var(--b1)), hsl(var(--b2) / 0.92));
-	border: 1px solid hsl(var(--bc) / 0.15);
-}
-
-main section {
+.site-main {
 	position: relative;
+	overflow: hidden;
 }
 
-main section::after {
+.site-main::before {
+	content: "";
+	position: absolute;
+	left: -12vw;
+	top: 8.5rem;
+	width: 140vw;
+	height: 7px;
+	transform: rotate(-10deg);
+	transform-origin: left center;
+	background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--safety-orange) 70%, white) 20%, color-mix(in srgb, var(--cobalt-mark) 84%, white) 62%, transparent 100%);
+	opacity: 0.45;
+	pointer-events: none;
+}
+
+.section-shell {
+	position: relative;
+	z-index: 1;
+}
+
+.section-shell::after {
 	content: "";
 	position: absolute;
 	left: 0;
 	right: 0;
 	bottom: -1px;
 	height: 1px;
-	background: linear-gradient(90deg, transparent, hsl(var(--bc) / 0.08), transparent);
+	background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--asphalt-ink) 20%, transparent), transparent);
+}
+
+.hero-shell {
+	padding-top: clamp(3rem, 7vw, 5.5rem);
+	padding-bottom: clamp(2.75rem, 6vw, 5rem);
+}
+
+.hero-thesis {
+	font-size: clamp(2.8rem, 7vw, 5.6rem);
+	line-height: 0.9;
+	text-wrap: balance;
+}
+
+.hero-subtext {
+	max-width: 40rem;
+	font-size: clamp(1.02rem, 1.3vw, 1.18rem);
+	color: color-mix(in srgb, var(--asphalt-ink) 72%, transparent);
+}
+
+.object-passport {
+	border: 1px solid color-mix(in srgb, var(--asphalt-ink) 16%, transparent);
+	background: linear-gradient(170deg, color-mix(in srgb, white 65%, var(--galvanized-light)), color-mix(in srgb, white 35%, var(--zinc-plate)));
+}
+
+.passport-row {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.62rem 0;
+	border-bottom: 1px dashed color-mix(in srgb, var(--asphalt-ink) 25%, transparent);
+}
+
+.passport-row:last-child {
+	border-bottom: 0;
+}
+
+.passport-key {
+	font-family: "IBM Plex Mono", "Cascadia Code", monospace;
+	font-size: 0.72rem;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: color-mix(in srgb, var(--asphalt-ink) 62%, transparent);
+}
+
+.passport-value {
+	font-weight: 700;
+	color: color-mix(in srgb, var(--asphalt-ink) 92%, white);
+}
+
+.emoji-mark {
+	font-size: 1.02em;
+	line-height: 1;
+	vertical-align: -0.08em;
+	margin-right: 0.3rem;
+}
+
+.service-meta {
+	margin-top: 0.65rem;
+	font-family: "IBM Plex Mono", "Cascadia Code", monospace;
+	font-size: 0.72rem;
+	line-height: 1.45;
+	color: color-mix(in srgb, var(--asphalt-ink) 75%, transparent);
+}
+
+.project-block h4 {
+	margin-top: 0.75rem;
+	font-size: 1.08rem;
+	letter-spacing: 0.02em;
+}
+
+.project-block h4:first-of-type {
+	margin-top: 0;
+}
+
+.process-rail {
+	position: relative;
+	display: grid;
+	gap: 1rem;
+}
+
+.process-step {
+	position: relative;
+	padding: 1rem 1rem 1rem 1.2rem;
+	border: 1px solid color-mix(in srgb, var(--asphalt-ink) 14%, transparent);
+	border-radius: 0.6rem;
+	background: color-mix(in srgb, white 56%, var(--galvanized-light));
+}
+
+.process-step::before {
+	content: "";
+	position: absolute;
+	left: -0.4rem;
+	top: 1.05rem;
+	width: 0.62rem;
+	height: 0.62rem;
+	border-radius: 50%;
+	background: var(--cobalt-mark);
+	box-shadow: 0 0 0 4px color-mix(in srgb, var(--cobalt-mark) 18%, transparent);
+}
+
+.process-label {
+	display: inline-flex;
+	align-items: center;
+	font-family: "IBM Plex Mono", "Cascadia Code", monospace;
+	font-size: 0.74rem;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: color-mix(in srgb, var(--asphalt-ink) 72%, transparent);
+}
+
+.role-tile {
+	border-left: 3px solid color-mix(in srgb, var(--safety-orange) 70%, transparent);
+}
+
+a:focus-visible,
+button:focus-visible {
+	outline: 3px solid color-mix(in srgb, var(--survey-lime) 82%, var(--asphalt-ink));
+	outline-offset: 2px;
+}
+
+@media (min-width: 920px) {
+	.process-rail {
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+		align-items: stretch;
+	}
+
+	.process-rail::before {
+		content: "";
+		position: absolute;
+		left: 0.4rem;
+		right: 0.4rem;
+		top: 1.35rem;
+		height: 2px;
+		background: linear-gradient(90deg, color-mix(in srgb, var(--safety-orange) 50%, transparent), color-mix(in srgb, var(--cobalt-mark) 80%, transparent));
+		opacity: 0.45;
+	}
+
+	.process-step::before {
+		left: 0.75rem;
+		top: -0.38rem;
+	}
+}
+
+@media (max-width: 919px) {
+	.site-main::before {
+		top: 10.2rem;
+		opacity: 0.33;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation: none !important;
+		transition: none !important;
+	}
 }

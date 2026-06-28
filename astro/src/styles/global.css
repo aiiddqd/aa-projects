@@ -1,47 +1,12 @@
 @import "tailwindcss";
-@plugin "daisyui";
-@plugin "daisyui/theme" {
-	name: "adsart";
-	default: true;
-	prefersdark: true;
-	color-scheme: dark;
-
-	--color-base-100: #0b0c10;
-	--color-base-200: #141822;
-	--color-base-300: #1b2230;
-	--color-base-content: #eef1f7;
-	--color-primary: #ff8a3d;
-	--color-primary-content: #1a0f07;
-	--color-secondary: #3ac7ff;
-	--color-secondary-content: #03141c;
-	--color-accent: #7ef0d6;
-	--color-accent-content: #04130f;
-	--color-neutral: #101623;
-	--color-neutral-content: #eaf0ff;
-	--color-info: #53a8ff;
-	--color-info-content: #051126;
-	--color-success: #2fd47f;
-	--color-success-content: #041d11;
-	--color-warning: #ffc247;
-	--color-warning-content: #2b1b00;
-	--color-error: #ff6678;
-	--color-error-content: #2d0710;
-
-	--radius-selector: 0.5rem;
-	--radius-field: 0.5rem;
-	--radius-box: 1rem;
-	--size-selector: 0.25rem;
-	--size-field: 0.25rem;
-	--border: 1px;
-	--depth: 1;
-	--noise: 0;
+@plugin "daisyui" {
+	themes: corporate --default;
 }
 
 :root {
-	color-scheme: dark;
-	--panel-glow: radial-gradient(circle at 18% 20%, rgb(255 138 61 / 0.2), transparent 36%),
-		radial-gradient(circle at 80% 5%, rgb(58 199 255 / 0.14), transparent 34%),
-		linear-gradient(145deg, #090a0f 0%, #0e131c 56%, #090b12 100%);
+	--panel-glow: radial-gradient(circle at 8% 14%, hsl(var(--s) / 0.09), transparent 32%),
+		radial-gradient(circle at 86% 6%, hsl(var(--p) / 0.1), transparent 34%),
+		linear-gradient(160deg, hsl(var(--b1)) 0%, hsl(var(--b2)) 42%, hsl(var(--b3)) 100%);
 }
 
 html {
@@ -64,9 +29,9 @@ h3,
 }
 
 .navbar {
-	background: color-mix(in oklab, hsl(var(--b1)) 88%, black) !important;
+	background: hsl(var(--b1) / 0.88) !important;
 	border-color: hsl(var(--bc) / 0.12) !important;
-	box-shadow: 0 10px 30px rgb(0 0 0 / 0.3);
+	box-shadow: 0 8px 24px hsl(var(--n) / 0.12);
 }
 
 .menu a {
@@ -77,18 +42,18 @@ h3,
 }
 
 .btn-primary {
-	box-shadow: 0 10px 24px hsl(var(--p) / 0.25);
+	box-shadow: 0 8px 18px hsl(var(--p) / 0.24);
 }
 
 .card,
 .rounded-box {
-	background: linear-gradient(165deg, hsl(var(--b2)), hsl(var(--n) / 0.72)) !important;
+	background: linear-gradient(165deg, hsl(var(--b1)), hsl(var(--b2) / 0.96)) !important;
 	border-color: hsl(var(--bc) / 0.13) !important;
-	box-shadow: 0 14px 35px rgb(0 0 0 / 0.34);
+	box-shadow: 0 10px 24px hsl(var(--n) / 0.1);
 }
 
 .timeline-box {
-	background: linear-gradient(165deg, hsl(var(--b2)), hsl(var(--n) / 0.75));
+	background: linear-gradient(165deg, hsl(var(--b1)), hsl(var(--b2) / 0.92));
 	border: 1px solid hsl(var(--bc) / 0.15);
 }
 

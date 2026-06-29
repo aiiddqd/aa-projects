@@ -725,19 +725,12 @@ button:focus-visible,
 
 @media (min-width: 920px) {
 	.process-rail {
-		grid-template-columns: repeat(5, minmax(0, 1fr));
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 		align-items: stretch;
 	}
 
 	.process-rail::before {
-		content: "";
-		position: absolute;
-		left: 0.4rem;
-		right: 0.4rem;
-		top: 1.35rem;
-		height: 2px;
-		background: linear-gradient(90deg, color-mix(in srgb, var(--safety-orange) 50%, transparent), color-mix(in srgb, var(--cobalt-mark) 80%, transparent));
-		opacity: 0.45;
+		content: none;
 	}
 
 	.process-step::before {

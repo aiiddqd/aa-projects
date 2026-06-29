@@ -16,7 +16,19 @@ import Icon from '../components/Icon.astro';
 			<a class="top-nav-link" href="#team">Команда</a>
 			<a class="top-nav-link" href="#contacts">Контакты</a>
 		</nav>
-		<a class="btn-primary ml-auto lg:ml-8" href="#contacts">Запустить проект</a>
+		<div class="ml-auto flex items-center gap-2 lg:ml-8">
+			<label class="theme-toggle flex cursor-pointer items-center gap-2" aria-label="Переключить тему" title="Переключить тему">
+				<svg class="icon-sun" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+					<circle cx="12" cy="12" r="5" />
+					<path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
+				</svg>
+				<input type="checkbox" id="theme-checkbox" class="toggle" />
+				<svg class="icon-moon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+					<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+				</svg>
+			</label>
+			<a class="btn-primary" href="#contacts">Запустить проект</a>
+		</div>
 	</header>
 
 	<main>
@@ -205,7 +217,7 @@ import Icon from '../components/Icon.astro';
 		<section class="section-band" id="process">
 			<div class="section-container">
 				<span class="caption-uppercase section-label">Процесс</span>
-				<h2 class="display-lg">Маршрут проекта</h2>
+				<h2 class="display-lg">Дорожная карта</h2>
 				<ol class="process-rail mt-8">
 					<li class="process-step">
 						<p class="process-label"><Icon name="lab" size="sm" />Этап 01</p>
@@ -267,7 +279,7 @@ import Icon from '../components/Icon.astro';
 		<section class="cta-band-dark" id="contacts">
 			<div class="section-container">
 				<span class="caption-uppercase section-label">Контакты</span>
-				<h2 class="display-lg">Без форм — сразу в диалог</h2>
+				<h2 class="display-lg">Сразу к диалогу</h2>
 				<p class="body-md mt-3 max-w-2xl mx-auto">
 					Выбирайте удобный канал, мы подключимся к обсуждению задачи в рабочее окно.
 				</p>
@@ -316,5 +328,18 @@ import Icon from '../components/Icon.astro';
 				}
 			});
 		});
+
+		// Theme toggle — switch between light and dark, persist to localStorage
+		const themeCheckbox = document.getElementById('theme-checkbox');
+		if (themeCheckbox) {
+			// Sync checkbox with current data-theme (set by FOUC script)
+			const current = document.documentElement.getAttribute('data-theme');
+			themeCheckbox.checked = current === 'light';
+			themeCheckbox.addEventListener('change', () => {
+				const next = themeCheckbox.checked ? 'light' : 'dark';
+				document.documentElement.setAttribute('data-theme', next);
+				localStorage.setItem('theme', next);
+			});
+		}
 	</script>
 </Layout>

@@ -4,15 +4,17 @@
 @import "@fontsource/inter/700.css";
 
 @plugin "daisyui" {
-	themes: adsart --default;
+	themes: light --default, dark --prefersdark;
 }
 
 /* ─────────────────────────────────────────────────────────────
-   daisyUI theme "adsart" — reconfigured to Ferrari DS palette
-   (Option A: keep daisyUI, override tokens + sharp corners)
+   daisyUI built-in themes — customized to Ferrari DS palette
+   (Option A: keep daisyUI, customize light + dark, sharp corners)
    ───────────────────────────────────────────────────────────── */
+
+/* DARK theme (default) — near-black canvas, Rosso Corsa primary */
 @plugin "daisyui/theme" {
-	name: "adsart";
+	name: "dark";
 	default: true;
 	prefersdark: true;
 	color-scheme: "dark";
@@ -46,8 +48,45 @@
 	--border: 1px;
 }
 
+/* LIGHT theme — white canvas, Rosso Corsa primary */
+@plugin "daisyui/theme" {
+	name: "light";
+	default: false;
+	prefersdark: false;
+	color-scheme: "light";
+
+	/* Canvas */
+	--color-base-100: #ffffff; /* canvas-light */
+	--color-base-200: #f7f7f7; /* surface-soft-light */
+	--color-base-300: #ebebeb; /* surface-strong-light */
+	--color-base-content: #181818; /* body-on-light */
+
+	/* Primary = Rosso Corsa */
+	--color-primary: #da291c;
+	--color-primary-content: #ffffff;
+
+	/* Secondary = surface-strong-light */
+	--color-secondary: #ebebeb;
+	--color-secondary-content: #181818;
+
+	/* Accent = Rosso Corsa (single brand voltage) */
+	--color-accent: #da291c;
+	--color-accent-content: #ffffff;
+
+	/* Neutral = ink */
+	--color-neutral: #181818;
+	--color-neutral-content: #ffffff;
+
+	/* Sharp corners — Ferrari signature */
+	--radius-box: 0rem;
+	--radius-field: 0rem;
+	--radius-selector: 0rem;
+	--border: 1px;
+}
+
 /* ─────────────────────────────────────────────────────────────
    Ferrari DS tokens (CSS custom properties — source of truth)
+   Dark theme is the default; light theme overrides below.
    ───────────────────────────────────────────────────────────── */
 :root {
 	/* Colors — surfaces */
@@ -104,6 +143,28 @@
 	--icon-md: 20px;
 	--icon-lg: 24px;
 	--icon-stroke: 1.7;
+}
+
+/* Light theme token overrides — Ferrari DS on white canvas */
+[data-theme="light"] {
+	--canvas: #ffffff;
+	--canvas-elevated: #f7f7f7;
+	--canvas-light: #ffffff;
+	--surface-soft-light: #f7f7f7;
+	--surface-strong-light: #ebebeb;
+
+	--ink: #181818;
+	--body: #555555;
+	--body-strong: #181818;
+	--body-on-light: #181818;
+	--muted: #8f8f8f;
+	--muted-soft: #b0b0b0;
+
+	--hairline: #d2d2d2;
+	--hairline-on-light: #d2d2d2;
+	--hairline-soft: #ebebeb;
+
+	--shadow-soft: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -630,9 +691,35 @@ body {
 	border-bottom: 1px solid var(--hairline);
 }
 
+/* ─────────────────────────────────────────────────────────────
+   Theme toggle — daisyUI toggle with icons (Ferrari DS styling)
+   Layout: [sun icon] [toggle] [moon icon]
+   ───────────────────────────────────────────────────────────── */
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+	width: 20px;
+	height: 20px;
+	color: var(--body);
+	flex-shrink: 0;
+}
+
+.theme-toggle .toggle {
+	--tglbg: var(--canvas-elevated);
+	--radius-selector: 9999px;
+	border-color: var(--hairline);
+	background-color: var(--canvas);
+}
+
+.theme-toggle .toggle:checked {
+	border-color: var(--rosso-corsa);
+	--tglbg: var(--rosso-corsa);
+	background-color: var(--canvas-elevated);
+}
+
 a:focus-visible,
-button:focus-visible {
-	outline: 3px solid color-mix(in srgb, var(--survey-lime) 82%, var(--asphalt-ink));
+button:focus-visible,
+.theme-toggle:focus-within {
+	outline: 3px solid var(--rosso-corsa);
 	outline-offset: 2px;
 }
 

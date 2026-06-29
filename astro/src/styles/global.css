@@ -416,6 +416,25 @@ body {
 	width: 100%;
 }
 
+/* Hero overlay is always dark — force light-on-dark contrast
+   regardless of theme so text and buttons stay legible. */
+.hero-band-cinema-content .display-mega,
+.hero-band-cinema-content .body-md,
+.hero-band-cinema-content .caption-uppercase {
+	color: #ffffff !important;
+}
+
+.hero-band-cinema-content .btn-outline {
+	background: transparent !important;
+	color: #ffffff !important;
+	border-color: #ffffff !important;
+}
+
+.hero-band-cinema-content .btn-outline:hover {
+	background: #ffffff !important;
+	color: #181818 !important;
+}
+
 .hero-cta-row {
 	display: flex;
 	flex-wrap: wrap;

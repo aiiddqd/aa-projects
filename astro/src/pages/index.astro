@@ -65,7 +65,7 @@ import Icon from '../components/Icon.astro';
 					<article class="feature-card-photo">
 						<img
 							class="feature-card-photo-image"
-							src="https://images.unsplash.com/photo-1565043666747-69feca4a9130?auto=format&fit=crop&w=800&q=70"
+							src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=70"
 							alt="Промышленное брендирование"
 							loading="lazy"
 						/>
@@ -91,7 +91,7 @@ import Icon from '../components/Icon.astro';
 					<article class="feature-card-photo">
 						<img
 							class="feature-card-photo-image"
-							src="https://images.unsplash.com/photo-1494412651409-896322b269f6?auto=format&fit=crop&w=800&q=70"
+						src="https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?auto=format&fit=crop&w=800&q=70"
 							alt="Арт-навигация и маркировка"
 							loading="lazy"
 						/>
@@ -117,7 +117,7 @@ import Icon from '../components/Icon.astro';
 					<article class="feature-card-photo">
 						<img
 							class="feature-card-photo-image"
-							src="https://images.unsplash.com/photo-1581092160562-40aa08e29829?auto=format&fit=crop&w=800&q=70"
+						src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=70"
 							alt="3D-превизуализация"
 							loading="lazy"
 						/>
@@ -130,7 +130,7 @@ import Icon from '../components/Icon.astro';
 					<article class="feature-card-photo">
 						<img
 							class="feature-card-photo-image"
-							src="https://images.unsplash.com/photo-1504917595217-d4dc8b668f47?auto=format&fit=crop&w=800&q=70"
+						src="https://images.unsplash.com/photo-1454944338482-a69bb95894af?auto=format&fit=crop&w=800&q=70"
 							alt="Сопровождение площадок"
 							loading="lazy"
 						/>
@@ -161,7 +161,7 @@ import Icon from '../components/Icon.astro';
 					<article class="feature-card-photo">
 						<img
 							class="feature-card-photo-image"
-							src="https://images.unsplash.com/photo-1565043666747-69feca4a9130?auto=format&fit=crop&w=800&q=70"
+						src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=70"
 							alt="Резервуарный парк"
 							loading="lazy"
 						/>
@@ -178,7 +178,7 @@ import Icon from '../components/Icon.astro';
 					<article class="feature-card-photo">
 						<img
 							class="feature-card-photo-image"
-							src="https://images.unsplash.com/photo-1494412651409-896322b269f6?auto=format&fit=crop&w=800&q=70"
+						src="https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?auto=format&fit=crop&w=800&q=70"
 							alt="Контейнерный терминал"
 							loading="lazy"
 						/>
@@ -333,10 +333,11 @@ import Icon from '../components/Icon.astro';
 		const themeCheckbox = document.getElementById('theme-checkbox');
 		if (themeCheckbox) {
 			// Sync checkbox with current data-theme (set by FOUC script)
-			const current = document.documentElement.getAttribute('data-theme');
-			themeCheckbox.checked = current === 'light';
-			themeCheckbox.addEventListener('change', () => {
-				const next = themeCheckbox.checked ? 'light' : 'dark';
+		// Toggle shows moon when checked → checked = dark
+		const current = document.documentElement.getAttribute('data-theme');
+		themeCheckbox.checked = current === 'dark';
+		themeCheckbox.addEventListener('change', () => {
+			const next = themeCheckbox.checked ? 'dark' : 'light';
 				document.documentElement.setAttribute('data-theme', next);
 				localStorage.setItem('theme', next);
 			});

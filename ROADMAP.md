@@ -2,7 +2,7 @@
 
 ## Этап 1. MVP (текущий фокус)
 - [x] картинку в хиро поменять на https://unsplash.com/photos/white-suv-advertisement-on-a-large-building-facade-QsI4maNVDQk
-- [ ] также поправить другие картинки и фото - много где сломаны
+- [x] также поправить другие картинки и фото - много где сломаны
 - [x] переименовать ## Маршрут проекта - Дорожная карта (оставлено «Дорожная карта»)
 - [x] тут ## сразу в диалог - давай так: сразу к диалогу
 - [x] use ligh & dark - instead. and add swith to header. use https://daisyui.com/components/theme-controller/

@@ -2,6 +2,17 @@
 
 ## 20260629
 
+- Реализована миграция на Ferrari Design System (Option A — перенастройка daisyUI-темы `adsart`).
+- daisyUI-тема `adsart` перенастроена: near-black canvas (#181818), Rosso Corsa primary (#da291c), sharp 0px corners (`--radius-box/field/selector: 0rem`), `prefersdark: true`.
+- В `:root` добавлены Ferrari CSS custom properties: цвета (`--canvas`, `--rosso-corsa`, `--ink`, `--body`, `--hairline` …), spacing-лестница (`--space-xxxs` … `--space-super`), radius (`--radius-none` … `--radius-full`), единственный shadow tier `--shadow-soft`.
+- Установлен `@fontsource/inter` (400/500/700) как self-hosted замена FerrariSans; Google Fonts CDN удалён из `Layout.astro`.
+- Добавлена типографическая иерархия: `.display-mega` (80→32px), `.display-lg`, `.display-md`, `.title-md`, `.body-md`, `.caption-uppercase` и др.
+- Hero переделан в `hero-band-cinema`: full-bleed фотография промышленного объекта, display-mega h1, primary + outline CTA с sharp corners.
+- Карточки «Услуги» и «Проекты» мигрированы на `feature-card-photo`: изображение сверху edge-to-edge, текст под ним, 0px corners.
+- Между секциями «Услуги» и «Проекты» добавлен `livery-band` — full-width Rosso Corsa акцент.
+- Навигация — `top-nav-on-dark` (uppercase + tracking 0.65px); контакты — `cta-band-dark`; футер — `footer-dark`.
+- Удалены emoji (🗺️), старые galvanized/zinc токены, `panel-glow`, `object-passport`, `contacts-panel`, `site-main::before` декор.
+- `npm run build` проходит без ошибок; dev-сервер рендерит страницу без console errors.
 - Создан RFC `260629-ferrari-design-system-adoption` — принятие Ferrari Design System как визуального стандарта проекта.
 
 ## 20260628

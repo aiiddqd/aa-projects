@@ -1,10 +1,11 @@
 # Roadmap
 
 ## Этап 1. MVP (текущий фокус)
-- [ ] use ligh & dark - instead. and add swith to header. use https://daisyui.com/components/theme-controller/
-- [ ] картинку в хиро поменять на https://unsplash.com/photos/white-suv-advertisement-on-a-large-building-facade-QsI4maNVDQk
-- [ ] переименовать ## Маршрут проекта - Дорожная карта
-- [ ] тут ## сразу в диалог - давай так: сразу к диалогу
+- [x] картинку в хиро поменять на https://unsplash.com/photos/white-suv-advertisement-on-a-large-building-facade-QsI4maNVDQk
+- [ ] также поправить другие картинки и фото - много где сломаны
+- [x] переименовать ## Маршрут проекта - Дорожная карта (оставлено «Дорожная карта»)
+- [x] тут ## сразу в диалог - давай так: сразу к диалогу
+- [x] use ligh & dark - instead. and add swith to header. use https://daisyui.com/components/theme-controller/
 - [ ] Упаковать ценностное предложение и кейсы под целевые сегменты.
 - [ ] Запустить первичную SEO-структуру и формы захвата брифа/заявки.
 - [x] Собрать одностраничный MVP-лендинг с ключевыми секциями: Главная, Услуги, Проекты, Процесс, Команда, Контакты.

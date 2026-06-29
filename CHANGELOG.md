@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 20260629 — правки по ROADMAP
+
+- Заменена картинка в hero на фото «White suv advertisement on a large building facade» (QsI4maNVDQk) — прямой URL Unsplash CDN.
+- Секция «Процесс»: заголовок «Дорожная карта» → «Маршрут проекта».
+- Секция «Контакты»: заголовок уже соответствует требованию «Сразу к диалогу» — оставлено как есть.
+- В ROADMAP отмечены выполненные пункты.
+
 ## 20260629
 
 - Реализована миграция на Ferrari Design System (Option A — перенастройка daisyUI-темы `adsart`).
